@@ -13,9 +13,15 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('#gallery');
-console.log(gallery);
-images.forEach(element =>{
-  gallery.insertAdjacentHTML('afterbegin', `<li class='gallery__item'><img src='${element.url}' alt='${element.url}' width='600' ></li>`);
-});
+const galleryList = document.querySelector('#gallery');
+
+const createGallery = (elements) => {
+  return elements.reduce((acc, el) => {
+    const item = `<li><img src='${el.url} alt='${el.alt}''></img>`;
+    return acc + item;
+  }, '');
+};
+
+const imageEl = createGallery(images);
+galleryList.insertAdjacentHTML('afterbegin', imageEl);
 
