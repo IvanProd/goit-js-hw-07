@@ -50,4 +50,12 @@ instance.show()
 };
 
 //зробити реагуваня на кнопку якщо встигну
-
+document.addEventListener("keydown", (event) => {
+  const keyPush = event.code === "Escape";
+  const lightbox = document.querySelector(".basicLightbox");
+  if (!lightbox) {
+    return;
+  }else if (keyPush) {
+    lightbox.remove();
+  }
+});
