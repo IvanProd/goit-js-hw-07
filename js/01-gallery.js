@@ -37,9 +37,9 @@ function clickingOnTheImage(event){
     return;
   };
     event.preventDefault();
-    console.log(event.target);
-    const originalImage = document.querySelector('img');
-    console.log(event.target.dataset.source);
+   // console.log(event.target);
+    //const originalImage = document.querySelector('img');
+    //console.log(event.target.dataset.source);
     
 
 const instance = basicLightbox.create(`
@@ -49,4 +49,4 @@ const instance = basicLightbox.create(`
 instance.show()
 };
 
-
+//зробити реагуваня на кнопку якщо встигну
