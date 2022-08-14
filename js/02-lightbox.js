@@ -30,12 +30,5 @@ function clickingOnTheImage(event){
     return;
   };
     event.preventDefault();
-
-    const lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250, showCounter: true, });
-
-    lightbox.on('show.simplelightbox', function () {
-        this.captionsData
-    });
-
-    console.log(lightbox);
 };
+let lightbox = new SimpleLightbox('.gallery__item', { captionDelay: 250, showCounter: true});
