@@ -1,10 +1,9 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-//console.log(galleryItems);
 
-const divGallery = document.querySelector('.gallery');//отримали посилання на div галереї
-//console.log(divGallery);
+const divGallery = document.querySelector('.gallery');
+
 
 
 const createGalleryItem = (element) => {
@@ -26,10 +25,28 @@ function makeGallery(massive){
     const imageEl = createGalleryItem(massive);
     return divGallery.insertAdjacentHTML('afterbegin', imageEl.join('')
     );
-}
+};
 
 makeGallery(galleryItems);
 
+divGallery.addEventListener('click', clickingOnTheImage);
 
+function clickingOnTheImage(event){
+
+  if(event.target.nodeName !== "IMG"){
+    return;
+  };
+    event.preventDefault();
+    console.log(event.target);
+    const originalImage = document.querySelector('img');
+    console.log(event.target.dataset.source);
+    
+
+const instance = basicLightbox.create(`
+    <img src="${event.target.dataset.source}" width="800" height="600">
+`)
+
+instance.show()
+};
 
 
